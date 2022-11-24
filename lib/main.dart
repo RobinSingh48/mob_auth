@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
           primarySwatch: Colors.blue
       ),
-      home: (FirebaseAuth.instance.currentUser != null)? HomeScreen():LoginScreen(),
+      home: (FirebaseAuth.instance.currentUser != null)? const HomeScreen():const LoginScreen(),
     );
   }
 }

@@ -14,16 +14,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HomeScreen"),
+        title: const Text("HomeScreen"),
         centerTitle: true,
         actions: [
           IconButton(onPressed: (){
             FirebaseAuth.instance.signOut();
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
-          }, icon: Icon(Icons.exit_to_app))
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginScreen()));
+          }, icon: const Icon(Icons.exit_to_app))
         ],
       ),
-      body: Center(child: Text("Welcome")),
+      body: const Center(child: Text("Welcome")),
     );
   }
 }

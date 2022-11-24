@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
         verificationFailed: (ex){
           Fluttertoast.showToast(msg: ex.code.toString(),gravity: ToastGravity.TOP,backgroundColor: Colors.redAccent,fontSize: 18,textColor: Colors.white,);
         },
-        timeout: Duration(seconds: 30),
+        timeout: const Duration(seconds: 30),
       );
     }on FirebaseAuthException catch(ex){
       Fluttertoast.showToast(msg: ex.code.toString(),gravity: ToastGravity.TOP,backgroundColor: Colors.redAccent,fontSize: 18,textColor: Colors.white,);
@@ -41,28 +41,28 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Login Screen"),
+        title: const Text("Login Screen"),
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           child: Form(
             key: _formkey,
             child: Column(
               children: [
-                SizedBox(height: 25,),
+                const SizedBox(height: 25,),
                 TextFormField(
                   autofocus: false,
                   maxLength: 10,
 
                   keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                   controller: mobileController,
                   decoration: InputDecoration(
-                      prefix: Text("+91"),
-                      label: Text("Mobile Number"),
+                      prefix: const Text("+91"),
+                      label: const Text("Mobile Number"),
                       counterText: "",
-                      errorStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.redAccent),
+                      errorStyle: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.redAccent),
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(25))
                   ),
                   validator: (value) {
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     return null;
                   },
                 ),
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 ElevatedButton(onPressed: (){
                   if(_formkey.currentState!.validate()){
                     setState(() {
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     });
                     sendOtp();
                   }
-                }, child: Text("Send Otp",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),))
+                }, child: const Text("Send Otp",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),))
               ],
             ),
           ),

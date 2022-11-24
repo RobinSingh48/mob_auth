@@ -37,25 +37,25 @@ class _OtpVerificationState extends State<OtpVerification> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Verify OTP"),
+        title: const Text("Verify OTP"),
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           child: Form(
             key: _formkey,
             child: Column(
               children: [
-                SizedBox(height: 25,),
+                const SizedBox(height: 25,),
                 TextFormField(
                   autofocus: false,
-                  style: TextStyle(fontSize: 20,),
+                  style: const TextStyle(fontSize: 20,),
                   controller: otpController,
                   decoration: InputDecoration(
 
-                      label: Text("OTP"),
+                      label: const Text("OTP"),
                       hintText: "Enter Otp here",
-                      errorStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.redAccent),
+                      errorStyle: const TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.redAccent),
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(25))
                   ),
                   validator: (value) {
@@ -65,7 +65,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                     return null;
                   },
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 ElevatedButton(onPressed: (){
                   if(_formkey.currentState!.validate()){
                     setState(() {
@@ -73,7 +73,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                     });
                     verify();
                   }
-                }, child: Text("Verify",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),))
+                }, child: const Text("Verify",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),))
               ],
             ),
           ),
